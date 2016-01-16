@@ -6,7 +6,7 @@ chmod +x shadowsocks.sh
 
 echo "* soft nofile 51200" >> /etc/security/limits.conf
 echo "* hard nofile 51200" >> /etc/security/limits.conf
-ulimit -n 51200
+echo "ulimit -n 51200" >> /etc/rc.d/rc.local
 echo "fs.file-max = 51200                     " >> /etc/sysctl.conf
 echo "net.core.rmem_max = 67108864            " >> /etc/sysctl.conf
 echo "net.core.wmem_max = 67108864            " >> /etc/sysctl.conf
@@ -29,7 +29,7 @@ echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
 wget http://my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz
 tar -xzvf serverSpeederInstaller.tar.gz
-chmod +x shadowsocks.sh
+chmod +x serverSpeederInstaller.sh
 ./serverSpeederInstaller.sh
 
 

@@ -31,5 +31,6 @@ wget http://my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz
 tar -xzvf serverSpeederInstaller.tar.gz
 chmod +x serverSpeederInstaller.sh
 ./serverSpeederInstaller.sh
-
+service serverSpeeder restart
+/etc/init.d/shadowsocks restart 
 

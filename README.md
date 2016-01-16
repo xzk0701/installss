@@ -1,0 +1,2 @@
+# installss
+install shadowsocks

@@ -1,11 +1,12 @@
-yum install python-setuptools && easy_install pip -y
-pip install shadowsocks -y
-
+clear
+echo "#########################################"
+wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh
+chmod +x shadowsocks.sh
+./shadowsocks.sh 2>&1 | tee shadowsocks.log
 
 echo "* soft nofile 51200" >> /etc/security/limits.conf
 echo "* hard nofile 51200" >> /etc/security/limits.conf
 ulimit -n 51200
-
 echo "fs.file-max = 51200                     " >> /etc/sysctl.conf
 echo "net.core.rmem_max = 67108864            " >> /etc/sysctl.conf
 echo "net.core.wmem_max = 67108864            " >> /etc/sysctl.conf
@@ -26,10 +27,9 @@ echo "net.ipv4.tcp_wmem = 4096 65536 67108864 " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_mtu_probing = 1            " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
-
-
-
-
-
+wget http://my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz
+tar -xzvf serverSpeederInstaller.tar.gz
+chmod +x shadowsocks.sh
+./serverSpeederInstaller.sh
 
 

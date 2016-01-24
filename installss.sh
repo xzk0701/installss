@@ -1,4 +1,6 @@
 clear
+chmod +x vpn.sh
+./vpn.sh
 echo "#########################################"
 chmod +x shadowsocks.sh
 ./shadowsocks.sh 2>&1 | tee shadowsocks.log

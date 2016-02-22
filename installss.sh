@@ -1,13 +1,12 @@
-clear
-chmod +x vpn.sh
-./vpn.sh
 echo "#########################################"
 chmod +x shadowsocks.sh
 ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 
 echo "* soft nofile 51200" >> /etc/security/limits.conf
 echo "* hard nofile 51200" >> /etc/security/limits.conf
-echo "ulimit -n 51200" >> /etc/rc.d/rc.local
+echo "ulimit -n 51200" >> /etc/rc.d/rc.locali
+echo "/sbin/modprobe tcp_hybla" >> /etc/rc.d/rc.local
+echo "/etc/init.d/shadowsocks restart" >> /etc/rc.d/rc.load
 echo "fs.file-max = 51200                     " >> /etc/sysctl.conf
 echo "net.core.rmem_max = 67108864            " >> /etc/sysctl.conf
 echo "net.core.wmem_max = 67108864            " >> /etc/sysctl.conf
@@ -28,10 +27,6 @@ echo "net.ipv4.tcp_wmem = 4096 65536 67108864 " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_mtu_probing = 1            " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
-wget http://my.serverspeeder.com/d/ls/serverSpeederInstaller.tar.gz
-tar -xzvf serverSpeederInstaller.tar.gz
-chmod +x serverSpeederInstaller.sh
-./serverSpeederInstaller.sh
-service serverSpeeder restart
+/sbin/modprobe tcp_hybla
 /etc/init.d/shadowsocks restart 
 

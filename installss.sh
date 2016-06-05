@@ -1,5 +1,6 @@
 echo "#########################################"
 chmod +x shadowsocks.sh
+chmod +x serverspeeder-all.sh
 ./shadowsocks.sh 2>&1 | tee shadowsocks.log
 
 echo "* soft nofile 51200" >> /etc/security/limits.conf
@@ -27,6 +28,7 @@ echo "net.ipv4.tcp_wmem = 4096 65536 67108864 " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_mtu_probing = 1            " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
+./serverspeeder-all.sh
 /sbin/modprobe tcp_hybla
 /etc/init.d/shadowsocks restart 
 

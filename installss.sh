@@ -28,7 +28,6 @@ echo "net.ipv4.tcp_wmem = 4096 65536 67108864 " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_mtu_probing = 1            " >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
-./serverspeeder-all.sh
 /sbin/modprobe tcp_hybla
 /etc/init.d/shadowsocks restart 
 

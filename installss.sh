@@ -1,3 +1,4 @@
+#! /bin/bash
 echo "#########################################"
 chmod +x shadowsocks.sh
 chmod +x serverspeeder-all.sh

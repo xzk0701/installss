@@ -1,8 +1,8 @@
 #! /bin/bash
 echo "#########################################"
-chmod +x shadowsocks.sh
-chmod +x serverspeeder-all.sh
-./shadowsocks.sh 2>&1 | tee shadowsocks.log
+wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-go.sh
+chmod +x shadowsocks-go.sh
+./shadowsocks-go.sh 2>&1 | tee shadowsocks-go.log
 
 echo "* soft nofile 51200" >> /etc/security/limits.conf
 echo "* hard nofile 51200" >> /etc/security/limits.conf
@@ -31,4 +31,4 @@ echo "net.ipv4.tcp_congestion_control = hybla " >> /etc/sysctl.conf
 sysctl -p
 /sbin/modprobe tcp_hybla
 /etc/init.d/shadowsocks restart 
-
+wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh && bash serverspeeder-all.sh

@@ -1,3 +1,11 @@
+quick use
+----
+Debian1:
+    apt-get install git vim wget -y
+    git clone https://github.com/xzk0701/installss.git
+    cd ~/installss
+    chmod +x installss.sh
+    ./installss.sh    
 -1.shadwosocks简介
 ---
 hadowsocks（中文名称：影梭）是使用Python等语言开发的、基于Apache许可证开源的代理软件。Shadowsocks使用socks5代理，用于保护网络流量。在中国大陆被广泛用于突破防火长城（GFW），以浏览被封锁的内容。
@@ -61,7 +69,7 @@ shadowsock脚本使用[秋水逸冰](https://teddysun.com/342.html)大大的脚�
 使用Ctrl+C可终止所有脚本
 
     cd ~
-    yum install git vim -y
+    yum install git vim wget -y
     git clone https://github.com/xzk0701/installss.git
     cd ~/installss
     chmod +x installss.sh
